@@ -25,7 +25,7 @@ const { isAddress, getAddress, formatUnits, parseUnits } = utils;
 //
 // Select the network you want to deploy to here:
 //
-const defaultNetwork = "localhost";
+const defaultNetwork = "sepolia";
 
 const mainnetGwei = 115;
 
@@ -53,10 +53,10 @@ module.exports = {
   networks: {
     localhost: {
       url: "http://127.0.0.1:8545",
-      /*      
+      /*
         notice no mnemonic here? it will just use account 0 of the hardhat node to deploy
         (you can put in a mnemonic here to set the deployer locally)
-      
+
       */
     },
     rinkeby: {
@@ -101,6 +101,9 @@ module.exports = {
       accounts: {
         mnemonic: mnemonic(),
       },
+      gas: 30000000,
+      //@ts-ignore
+      gasLimit: 30000000,
     },
     xdai: {
       url: "https://rpc.xdaichain.com/",
@@ -264,7 +267,7 @@ module.exports = {
     },
   },
   etherscan: {
-    apiKey: "PSW8C433Q667DVEX5BCRMGNAH9FSGFZ7Q8", // your api key here
+    apiKey: "GIG2R1PVW4UIAZ4QB6ZWPD9XXPRUQXTJTJ", // your api key here
   },
 };
 
